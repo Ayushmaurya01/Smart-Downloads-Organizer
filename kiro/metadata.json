@@ -1,0 +1,104 @@
+{
+  "project": {
+    "name": "Smart Downloads Organizer",
+    "type": "Python CLI Tool",
+    "description": "Command-line script that automatically organizes files in a folder into categorized subfolders based on file type",
+    "created": "2025-12-07",
+    "language": "Python 3",
+    "dependencies": "None (stdlib only)"
+  },
+  "structure": {
+    "files": [
+      {
+        "path": "organize_downloads.py",
+        "type": "main",
+        "description": "Main Python script with file organization logic"
+      },
+      {
+        "path": "README.md",
+        "type": "documentation",
+        "description": "User-facing documentation with usage instructions"
+      },
+      {
+        "path": "requirements.txt",
+        "type": "dependencies",
+        "description": "Empty file - no external dependencies required"
+      },
+      {
+        "path": "requirements.md",
+        "type": "documentation",
+        "description": "Functional and non-functional requirements specification"
+      },
+      {
+        "path": "design.md",
+        "type": "documentation",
+        "description": "Architecture and design documentation"
+      }
+    ],
+    "test_folder": {
+      "path": "test_folder/",
+      "description": "Test directory with sample files for validation",
+      "status": "organized"
+    }
+  },
+  "features": {
+    "categories": [
+      "Images (jpg, jpeg, png, gif, bmp, svg, webp)",
+      "Documents (pdf, doc, docx, txt, ppt, xls, xlsx)",
+      "Videos (mp4, mkv, avi, mov, webm)",
+      "Audio (mp3, wav, m4a, flac)",
+      "Archives (zip, rar, 7z, tar, gz)",
+      "Others (everything else)"
+    ],
+    "capabilities": [
+      "Automatic file categorization by extension",
+      "Custom folder path support",
+      "Default Downloads folder detection",
+      "Name conflict resolution (auto-rename)",
+      "Graceful error handling",
+      "Summary report generation"
+    ]
+  },
+  "functions": {
+    "main": "Entry point and user interaction orchestration",
+    "get_downloads_folder": "Returns path to user's Downloads folder",
+    "categorize_file": "Determines category based on file extension",
+    "organize_folder": "Main organization logic - scans, categorizes, and moves files",
+    "get_unique_filename": "Handles name conflicts by generating unique filenames",
+    "print_summary": "Displays organization results summary"
+  },
+  "testing": {
+    "test_run": {
+      "date": "2025-12-07",
+      "folder": "test_folder",
+      "files_processed": 9,
+      "results": {
+        "Images": 2,
+        "Documents": 3,
+        "Videos": 1,
+        "Audio": 1,
+        "Archives": 1,
+        "Others": 1
+      },
+      "status": "success"
+    }
+  },
+  "usage": {
+    "command": "python organize_downloads.py",
+    "input_options": [
+      "Press Enter for default Downloads folder",
+      "Enter custom folder path"
+    ],
+    "platform_support": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ]
+  },
+  "safety_features": [
+    "No file overwriting - automatic renaming",
+    "Permission error handling",
+    "Non-destructive operations (move, not delete)",
+    "Validation of folder existence"
+  ]
+}
